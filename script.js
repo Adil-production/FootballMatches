@@ -6,11 +6,11 @@ async function get(){
     let res = await fetch(API)
     let data = await res.json()
     showDatas(data.response)
-    console.log(data.response)
+    console.log(data)
 }
 
 function showDatas(datas) {
-    
+    document.getElementById("numberOfMatch").innerHTML = datas.length;
 
     datas.forEach((data) => {
         const { competition, competitionUrl, date, matchviewUrl , thumbnail , title  } = data
@@ -37,6 +37,7 @@ function showDatas(datas) {
               <small class="card-text" id="date">${date}</small>
               <br>
               <br>
+              
               <a href="${matchviewUrl}"><button type="button" onclick="btn()" class="btn btn-primary">Watch match</button></a>
             </div>
           </div>
@@ -59,6 +60,7 @@ function settingOut(){
         document.getElementById("home-out").style.display = "block";
         document.getElementById("main").style.display = "none";
         document.getElementById("top").style.display = "none";
+
         document.getElementById("setting-frame").style.display = "block";
         
     }
@@ -71,6 +73,7 @@ function homeOut(){
         document.getElementById("setting-out").style.display = "block";
         document.getElementById("main").style.display = "block";
         document.getElementById("top").style.display = "block";
+
         document.getElementById("setting-frame").style.display = "none";
     }
 
