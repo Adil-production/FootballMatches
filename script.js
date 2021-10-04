@@ -1,6 +1,9 @@
-
 const API = "https://www.scorebat.com/video-api/v3/";
 const main = document.getElementById('main')
+
+const searchBar = document.getElementById("searchBar");
+
+console.log(searchBar)
 get()
 async function get(){
     let res = await fetch(API)
@@ -9,11 +12,19 @@ async function get(){
     console.log(data)
 }
 
+
+
+
+
+
+
+
+
 function showDatas(datas) {
     document.getElementById("numberOfMatch").innerHTML = datas.length;
 
-    datas.forEach((data) => {
-        const { competition, competitionUrl, date, matchviewUrl , thumbnail , title  } = data
+    datas.forEach((datar) => {
+        const { competition, competitionUrl, date, matchviewUrl , thumbnail , title  } = datar
 
         const dataEl = document.createElement('div')
         dataEl.classList.add('data')
@@ -26,7 +37,7 @@ function showDatas(datas) {
         <div id="card-main" class="card mb-3 p-2  " style="max-width: 540px; border : 1px solid rgb(116, 116, 116)" align="left">
         <div class="row g-0">
           <div class="col-md-4" align="center">
-           <img src="${thumbnail}"  id="img" onclick="myFunc()" class="img-fluid rounded-start forteta w-100" alt="">
+           <img src="${thumbnail}"  id="img"  class="img-fluid rounded-start forteta w-100" alt="">
           </div>
           
           <div class="col-md-8 fortet" >
@@ -60,7 +71,7 @@ function settingOut(){
         document.getElementById("home-out").style.display = "block";
         document.getElementById("main").style.display = "none";
         document.getElementById("top").style.display = "none";
-
+        document.getElementById("up").style.display = "none";
         document.getElementById("setting-frame").style.display = "block";
         
     }
@@ -73,7 +84,7 @@ function homeOut(){
         document.getElementById("setting-out").style.display = "block";
         document.getElementById("main").style.display = "block";
         document.getElementById("top").style.display = "block";
-
+        document.getElementById("up").style.display = "block";
         document.getElementById("setting-frame").style.display = "none";
     }
 
