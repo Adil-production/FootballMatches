@@ -49,7 +49,7 @@ function showDatas(datas) {
               <br>
               <br>
               
-              <a href="${matchviewUrl}"><button type="button" onclick="btn()" class="btn btn-primary">Watch match</button></a>
+              <a href="${matchviewUrl}"><button class="btn btn-primary">Watch match</button></a>
             </div>
           </div>
         </div>
